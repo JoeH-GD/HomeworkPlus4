@@ -69,15 +69,23 @@ void SimpleNumber(int n) {
     bIsSimple == false ? std::cout << "this is not a simple number"<<std::endl : std::cout << "This is a simple number" <<std::endl;
 }
 
-//пошел в решении от обратного, потому что так запись получалась короче
 void LeapYear(int a)
 {
-    if (a % 4 != 0 || (a % 100 == 0 && a % 400 != 0))
-    {
-        std::cout << "This is not a leap year"<<std::endl;
-   }
+    //Все еще не доверяю своим пользователям
+    if (a >= 1 && a <= 3000) {
+        
+        //пошел в решении от обратного, потому что так запись получалась короче
+        if (a % 4 != 0 || (a % 100 == 0 && a % 400 != 0))
+        {
+            std::cout << "This is not a leap year" << std::endl;
+        }
 
-    else std::cout << "This is a leap year" << std::endl;
+        else std::cout << "This is a leap year" << std::endl;
+
+    }
+
+    else std::cout << "You have entered invalid year ";
+
 }
 
 int main()
@@ -98,7 +106,7 @@ int main()
     SimpleNumber(userNum);
 
     int year;
-    std::cout << "Enter any year: ";
+    std::cout << "Enter a year from 1 to 3000: ";
     std::cin >> year;
     LeapYear(year);
 
